@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lan="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>A/B Testing Hand-in</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <div id="root">
+      <div class="container">
+        <h1>A/B Testing Hand-in</h1>
+        <h3 style="font-weight: normal">
+          Destiny Wilson | March 14, 2024 | CS1300
+        </h3>
+
+        <!--Project introduction-->
+        <div id="introduction">
+          <p style="font-style: italic; font-size: 15px; text-align: center">
+            Please note that this assignment was merely an exercise in analyzing
+            statistical <br />data for design purposes. The A/B data used in
+            this assignment is fabricated.
+          </p>
+          <h2>I. Introduction</h2>
+          <p>
+            Per this project's title, I explored the intersections of design and
+            statistics by conducting an A/B test on two different UI designs and
+            analyzing the results. Here, I gained experience using statistical
+            data to draw conclusions on whether a design choice could reasonably
+            impact user interaction. <br /><br />
+            A medical appointment scheduling program was used for this test.
+            Version A and its corresponding data is depicted below. <br /><br />
+          </p>
+          <img src="img-vids/Screenshot 2024-03-14 at 1.07.53 AM.png" />
+          <img src="img-vids/Screenshot 2024-03-14 at 10.57.25 AM.png" />
+          <p>
+            As an A/B test, version B had very minimal changes. However, I
+            decided to focus my revisions on the text color and button styling
+            with the hope that it would allow users to book an appointment on
+            the program with greater efficiency. Webpage version B is below.
+          </p>
+          <img src="img-vids/Screenshot 2024-03-14 at 1.07.53 AM.png" />
+          <img src="img-vids/Screenshot 2024-03-14 at 1.08.03 AM.png" />
+          <img src="img-vids/GIF Recording 2024-03-14 at 12.47.28 AM.gif" />
+        </div>
+
+        <div id="hypothesis">
+          <div class="hyp-container">
+            <div class="misclick">
+              <h3>Creating Hypotheses</h3>
+              <p>
+                Once I completed the revisions for webpage version B, I created
+                null and alternative hypotheses.
+              </p>
+              <h4>Misclick rate</h4>
+              <p>
+                Definition: the frequency with which users click something else
+                on the page before finding the correct button for the task.
+              </p>
+              <p>
+                Null hypothesis: The distribution of misclicks is the same
+                between versions A and B when users attempt to identify the
+                button to book an appointment with Adam Ng, MD at Morristown
+                Medical Center on April 23, 2024, on webpages A and B.
+                <br /><br />Alternative hypothesis: The distribution of
+                misclicks on webpage b is different from those on webpage A.
+                <br /><br />Reasons: The additional affordance of working button
+                styling and increased button text visibility on webpage B should
+                allow users to accurately identify the button to book the
+                correct appointment, thereby causing the distribution of
+                misclicks to differ from webpage A. <br /><br />Predictions: For
+                the reasons stated above, I predict the experiment results will
+                reject the null hypothesis.
+              </p>
+            </div>
+            <div class="page-time">
+              <h4>Time on page</h4>
+              <p>Definition: time spent on the webpage for each user group.</p>
+              <p>
+                Null hypothesis: There is no difference in the average time
+                spent on the webpage between versions A and B when attempting to
+                identify the button to book an appointment with Adam Ng, MD at
+                Morristown Medical Center on April 23, 2024.
+                <br /><br />Alternative hypothesis: The average time spent on
+                webpage B is lower than the time spent on webpage A.
+                <br /><br />Reasons: The additional affordance of working button
+                styling and increased button text visibility on webpage B should
+                allow users to identify the button to book the correct
+                appointment with better time efficiency than webpage A.
+                <br /><br />Predictions: For the reasons stated above, I predict
+                the experiment results will reject the null hypothesis.
+              </p>
+            </div>
+            <div class="click-num">
+              <h4>Number of clicks</h4>
+              <p style="font-style: italic; text-align: center">
+                I have chosen the version B webpage’s number of clicks as my
+                metric.
+              </p>
+              <p>
+                Null hypothesis: There is no difference in the average number of
+                clicks between versions A and B when attempting to identify the
+                button to book an appointment with Adam Ng, MD at Morristown
+                Medical Center on April 23, 2024.
+
+                <br /><br />Alternative hypothesis: There is a difference in the
+                average number of clicks on web pages A and B.
+
+                <br /><br />Reasons: The additional affordance of working button
+                styling and increased button text visibility on webpage B should
+                allow users to identify the button to book the correct
+                appointment in a fewer number of clicks than on webpage A.
+                <br /><br />Predictions: For the reasons stated above, I predict
+                the experiment results will reject the null hypothesis.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div id="data-collection">
+          <div class="data-container">
+            <h2>II. Data Collection</h2>
+            <p>
+              The data for this experiment was collected from participants with
+              several prior experiences navigating the webpage interfaces. As
+              such, the data is extremely biased. Nonetheless, the results of
+              the test are provided below.
+            </p>
+            <img src="img-vids/Screenshot 2024-03-14 at 10.57.43 AM.png" />
+          </div>
+        </div>
+
+        <div id="analyis">
+          <div class="analysis-container">
+            <h2>III. Analysis</h2>
+            <p>
+              Afterward, I applied the appropriate statistical tests to each
+              tested metric.
+            </p>
+            <p>
+              Misclick rate: 𝛘2 test I decided to apply the chi-squared test to
+              analyze the misclick rate because this data is categorical,
+              reflected in the form of booleans—true or false. The magnitude of
+              the difference between the misclick rates for versions A and B is
+              statistically significant which is evidenced by the 𝛘2 and
+              p-values. The 𝛘2 value of 18.2 indicates a significantly high
+              difference between the misclick rates for versions A and B.
+              Additionally, the low p-value of roughly 0.0000199 reflects an
+              extremely low chance that versions A and B are the same.
+              Therefore, I reject the null hypothesis and accept the alternative
+              hypothesis.
+            </p>
+            <p>
+              Time on page: One-tailed test I decided to apply the one-tailed
+              test to analyze the time spent on the webpage because this data is
+              continuous, and reflected through a range of numbers. The time
+              spent on version B is statistically significantly lower than that
+              spent on version A, which is evidenced by the t-score and
+              p-values. The t-score value of roughly 8.329 indicates that users
+              spent a significantly longer amount of time on version A than they
+              did on version B. Additionally, the high p-value of roughly
+              0.999999999 reflects that there is an extremely high chance that
+              version A’s misclick rate is lower than that of version B.
+              Therefore, I reject the null hypothesis and accept the alternative
+              hypothesis.
+            </p>
+            <p>
+              Number of clicks: Two-tailed test I decided to apply the
+              two-tailed test to analyze users’ number of clicks on webpage
+              versions A and B because this data is continuous and reflected
+              through a range of numbers, and the test analyzes the difference
+              between values. Users’ number of clicks on version B is
+              statistically significantly lower than that of version A, which is
+              evidenced by the t-score and p-values. The t-score value of -3.68
+              is negative which indicates that the number of clicks on version B
+              is significantly lower than that of version A. Additionally, the
+              p-value of roughly 0.0012 is below the commonly used significance
+              level of 0.05. This data suggests a difference between the number
+              of clicks on versions A and B. Therefore, I reject the null
+              hypothesis and accept the alternative hypothesis.
+            </p>
+          </div>
+        </div>
+
+        <div id="conclusion">
+          <h2>IV. Summary Statistics</h2>
+          <p>
+            In the conducted A/B test, data was collected from two web pages
+            labeled A and B. Webpage A recorded a total of 24 data points, while
+            webpage B recorded 28. This difference in counts led to a higher
+            weight for the trials in version B compared to version A. The
+            calculated degrees of freedom (df) for versions A and B were 1.
+            Moreover, the mean amount of time spent on version A was 36139.46,
+            significantly higher than version B’s mean of 9607.46. Additionally,
+            the median time spent on version A was 36748.5 while version B’s
+            median was 8362. The mean number of clicks on version A was 8.34,
+            with a median of 5, while version B had a mean of 1.01 with a median
+            of 3 clicks. <br /><br />This data suggests a notable disparity
+            between the ease with which users could book an appointment with
+            Adam Ng, MD at Morristown Medical Center on April 23, 2024. Based on
+            these statistics, we can assume that the design differences between
+            versions A and B were statistically significant, providing
+            sufficient evidence to assert that the additional webpage styling
+            and text visibility on webpage B contributed to greater accuracy in
+            booking appointments.
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
